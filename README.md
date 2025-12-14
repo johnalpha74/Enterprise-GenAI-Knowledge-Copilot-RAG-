@@ -1,42 +1,48 @@
 # Enterprise-GenAI-Knowledge-Copilot-RAG-
 An enterprise-grade Generative AI knowledge copilot that answers user questions over internal documents (policies, SOPs, contracts) using Retrieval-Augmented Generation (RAG) on AWS.  This project demonstrates LLM orchestration, secure retrieval, governance, and explainability in production environments.
 
-🎯 Objectives
+# Objectives
 
-Build a production-ready GenAI system using RAG
+* Build a production-ready GenAI system using RAG
+* Reduce hallucinations through grounded retrieval
+* Provide transparent, explainable AI responses
 
-Reduce hallucinations through grounded retrieval
+# Architecture
+* User → API Gateway → Lambda
+* Amazon Bedrock (LLM inference)
+* OpenSearch (Vector Search)
+* S3 (Document Store)
 
-Provide transparent, explainable AI responses
+# AWS Services Used
+* Amazon Bedrock
+* Amazon OpenSearch (Vector Engine)
+* AWS Lambda
+* Amazon S3
+* API Gateway
+* IAM, CloudWatch
 
-🧠 Architecture
+# Explainability & Trust
+* Source document attribution
+* Confidence scoring per response
+* Retrieval traceability
 
-User → API Gateway → Lambda
+# Repository Structure
+~~~
+/data
+/embeddings
+/lambda
+/prompts
+/infra
+README.md 
+~~~
 
-Amazon Bedrock (LLM inference)
+# How to Run
+* Upload documents to S3
+* Generate embeddings
+* Deploy Lambda + API Gateway
+* Query via UI or API
 
-OpenSearch (Vector Search)
-
-S3 (Document Store)
-
-☁️ AWS Services Used
-
-Amazon Bedrock
-
-Amazon OpenSearch (Vector Engine)
-
-AWS Lambda
-
-Amazon S3
-
-API Gateway
-
-IAM, CloudWatch
-
-🔍 Explainability & Trust
-
-Source document attribution
-
-Confidence scoring per response
-
-Retrieval traceability
+# Key Outcomes
+* Reduced hallucinations
+* Explainable responses
+* Enterprise-ready security
